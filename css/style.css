@@ -312,26 +312,42 @@ a:hover { color: var(--color-accent); }
     .experience-grid::-webkit-scrollbar { display: none; }
     .experience-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* --- Access (修正ポイント) --- */
-    .access-grid { grid-template-columns: 1fr; gap: 40px; }
+    /* --- Access (修正版: コンパクト表示) --- */
+    .access-grid { grid-template-columns: 1fr; gap: 30px; }
     
-    /* 地図を横幅いっぱいにし、高さを少し抑える */
+    /* 地図設定 */
     .access-map .map-placeholder { height: 250px; width: 100%; }
     
+    /* テキスト設定 */
     .access-list {
-        /* 文字がはみ出さないように強制的に折り返す設定 */
         width: 100%;
         overflow-wrap: break-word;
     }
-    .access-list h3 { font-size: 1.3rem; margin-bottom: 16px; }
-    .access-list ul { margin-bottom: 20px; padding: 0; }
+    .access-list h3 { 
+        font-size: 1.3rem; 
+        margin-bottom: 12px; /* 見出し下の余白を削減 */
+    }
+    .access-list ul { 
+        margin-bottom: 16px; /* リスト下の余白を削減 */
+        padding: 0; 
+    }
     .access-list li {
-        font-size: 0.85rem; padding-bottom: 10px; margin-bottom: 10px; line-height: 1.6;
+        font-size: 0.85rem; 
+        padding-bottom: 8px; /* アイテム間の余白を削減 */
+        margin-bottom: 8px; 
+        line-height: 1.5;    /* 行間を1.6→1.5に詰める */
+        border-bottom: 1px dotted #ccc;
     }
     .access-list li strong {
-        font-size: 0.95rem; display: block; margin-bottom: 2px;
+        font-size: 0.95rem; 
+        display: block; 
+        margin-bottom: 2px;
+        line-height: 1.3; /* 大学名などが2行になっても間延びしないように */
     }
-    .access-list p { font-size: 0.85rem; }
+    .access-list p { 
+        font-size: 0.85rem; 
+        line-height: 1.6;
+    }
 
     /* Tenant */
     .tenant-card { flex-direction: column; }
