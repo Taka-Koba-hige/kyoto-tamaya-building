@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【Official】TAMAYA BUILDING</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="alternate" hreflang="ja" href="https://example.com/index-students.html">
+    <link rel="alternate" hreflang="en" href="https://example.com/en/index-students.html">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-logo">TAMAYA BUILDING</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#rooms">Room Types</a></li>
+                <li><a href="#facility">Facility</a></li>
+                <li><a href="#access">Access</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-controls" style="display: flex; align-items: center;">
+            <a href="contact-sample.html" class="header-cta">Inquiry</a>
+            
+            <div class="language-switcher" style="margin-left: 24px;">
+                <a href="../index-students.html">JP</a>
+                <span>/</span>
+                <a href="index-students.html" class="is-active">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-catchphrase">Live Kyoto, Live Today.</h2>
+            </div>
+        </section>
+
+        <section id="concept" class="section philosophy">
+            <div class="container">
+                <h2 class="section-title fade-in">Concept</h2>
+                <p class="section-subtitle fade-in">Your fulfilling student life starts here.</p>
+
+                <div class="philosophy-grid fade-in">
+                    <div class="philosophy-text">
+                        <h3>Learn, Grow, and Fly with Confidence.</h3>
+                        <p>
+                            We want to provide all students studying in Kyoto with more than just a place to live, but a place to have a "fulfilling time."
+                        </p>
+                        <p>
+                            The tranquility of a historic city meets modern, functional living spaces.
+                            With robust security and an environment where you can focus on your studies, we powerfully support your new beginning.
+                        </p>
+                    </div>
+                    <div class="philosophy-image-wrapper">
+                        <img src="../image/main01.jpeg" alt="Modern Interior" class="philosophy-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rooms" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Room Types</h2>
+                <p class="section-subtitle fade-in">Room Information</p>
+
+                <div class="rooms-grid">
+                    
+                    <div class="room-card fade-in">
+                        <img src="../image/room001.jpeg" alt="Type A">
+                        <div class="room-card-content">
+                            <h3>Room 〇〇〇</h3>
+                            
+                            <div class="room-status is-available">
+                                AVAILABLE
+                            </div>
+                            
+                            <ul class="room-card-spec">
+                                <li><strong>Size:</strong> 25.0 m²</li>
+                                <li><strong>Rent:</strong> ¥20,000 /mo.<br><span style="font-size:0.8em;">(Includes Water & Gas)</span><br><span style="font-size:0.8em;">*Electricity: Basic fee ¥400 + usage</span></li>
+                            </ul>
+                            <p>Standard type with great sunlight. Fully furnished with appliances, a comfortable desk, and ample storage.</p>
+                            
+                            <button type="button" class="details-link" data-modal-target="modal-room-a">
+                                View Details →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="room-card fade-in">
+                        <img src="../image/room002.jpeg" alt="Type B">
+                        <div class="room-card-content">
+                            <h3>Type B (Studio)</h3>
+                            
+                            <div class="room-status is-few">
+                                Only 2 Left
+                            </div>
+
+                            <ul class="room-card-spec">
+                                <li><strong>Size:</strong> 22.5 m²</li>
+                                <li><strong>Rent:</strong> From ¥68,000 /mo.</li>
+                            </ul>
+                            <p>Compact studio type pursuing functionality. Ideal for living alone for the first time.</p>
+                            
+                            <a href="room-b-detail.html" class="details-link">View Details →</a>
+                        </div>
+                    </div>
+
+                    <div class="room-card fade-in">
+                        <img src="../image/room003.jpeg" alt="Type C">
+                        <div class="room-card-content">
+                            <h3>Type C (1K / Corner)</h3>
+                            
+                            <div class="room-status is-full">
+                                FULL
+                            </div>
+
+                             <ul class="room-card-spec">
+                                <li><strong>Size:</strong> 28.0 m²</li>
+                                <li><strong>Rent:</strong> From ¥78,000 /mo.</li>
+                            </ul>
+                            <p>Quiet corner room. A bright space with light from two sides, perfect for those who want to relax.</p>
+                            <a href="room-c-detail.html" class="details-link">View Details →</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="facility" class="section experience">
+            <div class="container">
+                <h2 class="section-title fade-in">Facility & Security</h2>
+                <p class="section-subtitle fade-in">Shared Facilities</p>
+
+                <div class="experience-grid">
+                    <div class="room-card fade-in"> 
+                        <img src="../image/book-space.jpeg" alt="Book Space">
+                        <div class="room-card-content">
+                            <h3>Freely-usable Space</h3>
+                            <p>An ideal space for reading, self-study, and socializing with others.</p>
+                        </div>
+                    </div>
+                    <div class="room-card fade-in">
+                        <img src="../image/kitchen.jpeg" alt="Kitchen">
+                        <div class="room-card-content">
+                            <h3>Communal Kitchen</h3>
+                            <p>Equipped with Wi-Fi. Can be used as a study lounge or a place to interact with friends.</p>
+                        </div>
+                    </div>
+                    <div class="room-card fade-in">
+                        <img src="../image/shower-room001.jpeg" alt="Bathroom">
+                        <div class="room-card-content">
+                            <h3>Shared Bathroom</h3>
+                            <p>Delivery boxes are available for receiving packages when you are out. Safe for online shopping.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Access</h2>
+                <p class="section-subtitle fade-in">Access to Major Universities</p>
+
+                <div class="access-grid fade-in">
+                    <div class="access-map">
+                        <div class="map-placeholder">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6531.872340489013!2d135.74619607753797!3d35.05833490264758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001a80836ef5e81%3A0xa6da8271981e2795!2z44CSNjAzLTgwMzUg5Lqs6YO95bqc5Lqs6YO95biC5YyX5Yy65LiK6LOA6IyC5pyd6Zyy44Kx5Y6f55S677yT77yQ4oiS77yR77yZIOeOieWxi-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1763611825523!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="access-list">
+                        <h3>Commute Times</h3>
+                        <ul>
+                            <li><strong>Kyoto Univ. (Yoshida Campus)</strong><br>Approx. 20 min by City Bus (No. 206)</li>
+                            <li><strong>Doshisha Univ. (Imadegawa Campus)</strong><br>Approx. 15 min by Subway (Direct)</li>
+                            <li><strong>Ritsumeikan Univ. (Kinugasa Campus)</strong><br>Approx. 30 min by City Bus (No. 50)</li>
+                            <li><strong>Kyoto Univ. of the Arts</strong><br>Approx. 25 min by City Bus (No. 5)</li>
+                        </ul>
+                        <p>5-minute walk to the nearest "Karasuma Oike" Station. Excellent access to anywhere in the city.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main> 
+
+    <div class="modal-overlay" id="modal-room-a">
+        
+        <div class="modal-content fade-in">
+            <button type="button" class="modal-close">×</button>
+            
+            <div class="room-info">
+                <h1>Room 〇〇〇</h1>
+                <p class="room-type">Standard 1K Type</p>
+            </div>
+
+            <div class="room-gallery-modal"> 
+                <img src="../image/room001.jpeg" alt="Type A Main" class="main-image-modal"> 
+                <div class="thumbnail-grid">
+                    <img src="../image/room001.jpeg" alt="Room View" class="thumbnail is-active">
+                    <img src="../image/room002.jpeg" alt="Desk & Chair" class="thumbnail">
+                    <img src="../image/room003.jpeg" alt="Kitchenette" class="thumbnail">
+                    <img src="../image/room004.jpeg" alt="Bathroom" class="thumbnail">
+                </div>
+            </div>
+
+            <div class="room-info">
+                <p class="description" style="margin-top: 24px;">
+                    [Property Description Here]<br>
+                    A bright space with sunlight pouring in from large south-facing windows. Perfect for those who want to focus on their studies.
+                </p>
+
+                <table class="spec-table">
+                    <tbody>
+                        <tr>
+                            <th>Layout</th>
+                            <td>Western-style 7-jo (approx. 11㎡)</td>
+                        </tr>
+                        <tr>
+                            <th>Furnishings</th>
+                            <td>Bed, Desk, Chair, Bookshelf, Storage</td>
+                        </tr>
+                        <tr>
+                            <th>Facilities</th>
+                            <td>AC, Kitchenette (IH), Separate Bath/Toilet, Independent Washbasin</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <a href="contact-sample.html" class="booking-cta">Inquire about this room</a>
+                <p class="booking-price">
+                    Rent: ¥20,000/mo. <br>
+                    Maintenance Fee: ¥5,000 (Water & Gas included)<br>
+                    <span style="font-size: 0.8em; color: #666;">*Electricity: Basic fee ¥400 + usage</span>
+                </p>
+            </div>
+
+        </div> 
+    </div> 
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">TAMAYA BUILDING</div>
+            <nav class="footer-nav">
+                <a href="#concept">Concept</a>
+                <a href="#rooms">Room Types</a>
+                <a href="#facility">Facility</a>
+                <a href="#access">Access</a>
+                <a href="contact-sample.html">Contact</a>
+            </nav>
+            <p>30-19 Asatsuyugahara-cho, Kamigamo, Kita-ku, Kyoto 603-8035</p>
+            <p>Tel: +81-75-XXX-XXXX (Managed by: 〇〇 Corp.)</p>
+            <p class="footer-copyright">© 2025 TAMAYA BUILDING. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1394 @@
+/* --- CSS Reset & Variables (全ページ共通) --- */
+:root {
+    /* 色：提案したカラースキーム */
+    --color-base: #ffffff; /* ベースの白 */
+    --color-light-gray: #f9f9f9; /* 背景のライトグレー */
+    --color-text: #333333; /* メインテキスト（チャコールグレー） */
+    --color-accent: #B28B40; /* 金茶 (アクセント) */
+    
+    /* フォント：提案したタイポグラフィ */
+    --font-serif: 'Noto Serif JP', serif; /* 日本語・見出し（明朝体） */
+    --font-sans: 'Montserrat', 'Noto Sans JP', sans-serif; /* 英語・本文（ゴシック/サンセリフ） */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-base);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 記事用コンテナ（experience-detail.html）*/
+.article-container {
+    max-width: 800px; /* 読みやすい横幅 */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* フォーム用コンテナ（reserve.html）*/
+.form-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Header (全ページ共通) --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: rgba(255, 255, 255, 0.8); /* すりガラス効果 */
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.header-logo {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-nav li {
+    margin-left: 28px;
+}
+
+.header-nav a {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.header-cta {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 10px 20px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.header-cta:hover {
+    background-color: #9c7a38;
+    color: #fff;
+}
+
+/* --- 下層ページ共通 --- */
+.main-content {
+    padding-top: 100px; /* ヘッダーの高さ分 */
+}
+
+/* --- 共通セクションスタイル --- */
+.section {
+    padding: 100px 0; /* 余白を贅沢に使う */
+}
+/* 下層ページでは余白を少し狭める */
+.main-content .section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+/* --- パンくずリスト (下層ページ共通) --- */
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: var(--color-light-gray);
+    border-bottom: 1px solid #eee;
+}
+.breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    font-size: 0.8rem;
+    /* .container を使うため幅を合わせる */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.breadcrumbs li::after {
+    content: '>';
+    margin: 0 10px;
+    color: #999;
+}
+.breadcrumbs li:last-child::after {
+    content: '';
+}
+.breadcrumbs a {
+    color: #777;
+}
+.breadcrumbs a:hover {
+    color: var(--color-accent);
+}
+.breadcrumbs li:last-child a {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* --- 1. Hero (index.html) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('../image/main02.jpeg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::before { /* 画像を少し暗くして文字を読みやすくする */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-catchphrase {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
+/* --- 2. Philosophy (index.html) --- */
+.philosophy {
+    background-color: var(--color-light-gray);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* アシンメトリーなレイアウト */
+    gap: 60px;
+    align-items: center;
+}
+
+.philosophy-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.philosophy-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.philosophy-text p {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+/* --- 3. Rooms (index.html) --- */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.room-card {
+    background: #fff;
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.room-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.room-card-content {
+    padding: 24px;
+}
+
+.room-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.room-card p {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.room-card .details-link {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* --- 4. Experience (index.html) --- */
+.experience {
+    background-color: var(--color-light-gray);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* --- お部屋詳細 (room-detail.html) --- */
+.room-detail-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* ギャラリーを大きく、情報を右に */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.room-gallery .main-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border: 1px solid #eee;
+    margin-bottom: 16px;
+}
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.thumbnail-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.thumbnail-grid img:hover,
+.thumbnail-grid img.is-active {
+    border-color: var(--color-accent);
+}
+
+.room-info h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.room-info .room-type {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 24px;
+}
+.room-info .description {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 32px;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+}
+.spec-table th, .spec-table td {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.spec-table th {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    width: 120px;
+    color: #555;
+}
+
+.booking-cta {
+    background-color: var(--color-accent);
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.booking-cta:hover {
+    background-color: #9c7a38;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.booking-price {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 12px;
+}
+
+.amenities {
+    background-color: var(--color-light-gray);
+}
+.amenities h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.amenity-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    list-style: none;
+    /* .containerに合わせる */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.amenity-list li {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    padding-left: 30px;
+    position: relative;
+}
+.amenity-list li::before {
+    content: '✓'; /* アイコンの代わり */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* --- 記事 (experience-detail.html) --- */
+.article-header {
+    text-align: center;
+    padding: 80px 0;
+}
+.article-header .category {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+.article-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem; /* タイトルを大きく */
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+.article-header .date {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.article-hero-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 80px;
+}
+
+.article-body {
+    font-size: 1.05rem; /* 本文は少し大きめで読みやすく */
+    line-height: 2.2; /* 行間を贅沢にとる */
+    color: #444;
+}
+.article-body p {
+    margin-bottom: 2.2rem; /* 段落の間隔 */
+}
+.article-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--color-accent);
+    padding-left: 16px;
+}
+.article-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+.article-body blockquote {
+    margin: 2.5rem 0;
+    padding-left: 2rem;
+    border-left: 3px solid #ccc;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+}
+.article-body figure {
+    margin: 3rem 0;
+}
+.article-body figure img {
+    width: 100%;
+    height: auto;
+}
+.article-body figure figcaption {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+}
+.article-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.shop-info {
+    background-color: var(--color-light-gray);
+    padding: 40px;
+    margin-top: 3rem;
+    border: 1px solid #eee;
+}
+.shop-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.shop-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+.shop-info ul {
+    list-style: none;
+    font-size: 0.9rem;
+}
+.shop-info li {
+    padding-left: 1.5rem;
+    margin-bottom: 12px;
+    position: relative;
+}
+.shop-info li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.shop-info .map-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-family: var(--font-sans);
+}
+
+.article-footer {
+    padding: 60px 0;
+    text-align: center;
+}
+.back-to-list {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--color-accent);
+    padding: 12px 30px;
+    border: 2px solid var(--color-accent);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.back-to-list:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+/* --- 予約フォーム (reserve.html) --- */
+.booking-section {
+    padding: 80px 0;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.booking-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+.booking-header p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.booking-form fieldset {
+    border: none;
+    margin-bottom: 40px;
+}
+.booking-form legend {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--color-accent);
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.form-group label .required {
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: var(--color-accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(178, 139, 64, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.submit-button:hover {
+    background-color: #9c7a38;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 16px;
+}
+
+/* --- Footer (全ページ共通) --- */
+.footer {
+    background-color: var(--color-text);
+    color: #aaa;
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.footer-nav {
+    margin-bottom: 24px;
+}
+
+.footer-nav a {
+    color: #ccc;
+    margin: 0 15px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    margin-top: 40px;
+}
+
+/* --- JS用：フェードインアニメーション (全ページ共通) --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- style.css の末尾に追記 --- */
+
+/* 2. Rooms (学生向け) - 家賃・面積表示用 */
+.room-card-spec {
+    list-style: none;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+.room-card-spec li {
+    font-size: 0.9rem;
+    color: #555;
+}
+.room-card-spec li strong {
+    font-weight: 500;
+    color: var(--color-text);
+    display: inline-block;
+    width: 80px; /* 見た目を揃える */
+}
+
+/* 4. Access (学生向け) - アクセスセクション用 */
+.access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.access-map .map-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-family: var(--font-sans);
+}
+
+.access-list h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+.access-list p {
+    font-size: 1rem;
+    line-height: 2;
+}
+.access-list ul {
+    list-style: none;
+    margin-bottom: 24px;
+}
+.access-list li {
+    font-size: 1rem;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px dotted #ccc;
+}
+.access-list li strong {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* --- レスポンシブ対応 (既存のCSSにも追記が必要) --- */
+/* もし既存のCSSに @media クエリがあれば、
+   そこにも .access-grid のレスポンシブ設定を追加してください
+*/
+@media (max-width: 768px) {
+    .access-grid {
+        grid-template-columns: 1fr; /* 縦積みにする */
+        gap: 40px;
+    }
+}
+
+/* --- style.css の末尾に追記 --- */
+
+/* A案: ルームカード内の空室ステータスバッジ */
+.room-status {
+    display: inline-block; /* 他要素と並べる */
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px; /* スペックリストとの間に余白 */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 1. 空室あり (アクセントカラー) */
+.room-status.is-available {
+    background-color: var(--color-accent); /* #B28B40 */
+    color: #fff;
+}
+
+/* 2. 残りわずか (アクセントカラーの枠線) */
+.room-status.is-few {
+    background-color: #fff;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+/* 3. 満室 (グレーアウト) */
+.room-status.is-full {
+    background-color: #eee;
+    color: #888;
+    border: 1px solid #ddd;
+}
+
+/* --- style.css の末尾に追記 --- */
+
+/* 2. Rooms (学生向け) - 家賃・面積表示用 */
+.room-card-spec {
+    list-style: none;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+.room-card-spec li {
+    font-size: 0.9rem;
+    color: #555;
+}
+.room-card-spec li strong {
+    font-weight: 500;
+    color: var(--color-text);
+    display: inline-block;
+    width: 80px; /* 見た目を揃える */
+}
+
+/* 4. Access (学生向け) - アクセスセクション用 */
+.access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.access-map .map-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-family: var(--font-sans);
+}
+
+.access-list h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+.access-list p {
+    font-size: 1rem;
+    line-height: 2;
+}
+.access-list ul {
+    list-style: none;
+    margin-bottom: 24px;
+}
+.access-list li {
+    font-size: 1rem;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px dotted #ccc;
+}
+.access-list li strong {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+
+/* --- 言語切り替えスイッチャー --- */
+.language-switcher {
+    /* ヘッダーのCTAボタンの隣に配置 */
+    margin-left: 20px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+}
+.language-switcher a {
+    color: #999;
+    text-decoration: none;
+    padding: 4px;
+    font-size: 0.9rem;
+}
+.language-switcher span {
+    color: #ccc;
+    margin: 0 4px;
+}
+.language-switcher a.is-active,
+.language-switcher a:hover {
+    color: var(--color-accent); /* アクティブな言語・ホバーで色付け */
+    font-weight: bold;
+}
+
+
+/* --- A案: ルームカード内の空室ステータスバッジ --- */
+.room-status {
+    display: inline-block; /* 他要素と並べる */
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px; /* スペックリストとの間に余白 */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.room-status.is-available {
+    background-color: var(--color-accent); /* #B28B40 */
+    color: #fff;
+}
+.room-status.is-few {
+    background-color: #fff;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+.room-status.is-full {
+    background-color: #eee;
+    color: #888;
+    border: 1px solid #ddd;
+}
+
+
+/* ---------------------------------- */
+/* --- モーダルウィンドウ (B案) --- */
+/* ---------------------------------- */
+
+/* 1. 黒い背景 (オーバーレイ) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+    backdrop-filter: blur(5px); /* 背景をぼかす */
+    z-index: 1000;
+    
+    /* 普段は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    /* 中身 (モーダル) を中央揃えにする */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. 表示状態 (JSでこのクラスを付け外しする) */
+.modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. 白いコンテンツボックス */
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 800px; /* モーダルの最大幅 */
+    max-height: 90vh; /* 画面高さの90%まで */
+    overflow-y: auto; /* 中身が多ければスクロール */
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    
+    /* 表示時のアニメーション ( .fade-in と同じ動き) */
+    transform: translateY(20px);
+    transition: transform 0.4s ease-out;
+}
+.modal-overlay.is-visible .modal-content {
+    transform: translateY(0);
+}
+
+
+/* 4. 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #999;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+.modal-close:hover {
+    color: var(--color-text);
+}
+
+/* 5. モーダル内のギャラリー */
+.room-gallery-modal .main-image-modal {
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    margin-bottom: 16px; /* HTML側で .main-image で囲ってないので */
+}
+.room-gallery-modal .thumbnail-grid {
+    /* 既存の .thumbnail-grid スタイルをそのまま流用できます */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.room-gallery-modal .thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.room-gallery-modal .thumbnail:hover,
+.room-gallery-modal .thumbnail.is-active {
+    border-color: var(--color-accent);
+}
+
+/* --- お問い合わせフォームページ用 --- */
+
+/* ページヘッダー */
+.page-header {
+    padding: 120px 0 60px;
+    text-align: center;
+    background-color: var(--color-light-gray);
+}
+.page-title {
+    font-family: var(--font-sans);
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.page-subtitle {
+    font-family: var(--font-serif);
+    color: #666;
+    font-size: 1rem;
+}
+
+/* フォームコンテナ */
+.form-container {
+    max-width: 800px; /* 幅を制限して読みやすく */
+    margin: 0 auto;
+}
+.form-lead {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* フォーム基本スタイル */
+.contact-form {
+    background: #fff;
+    padding: 40px; /* 必要に応じて枠線や影をつけても良い */
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* 必須・任意バッジ */
+.badge-required, .badge-any {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.badge-required {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+.badge-any {
+    background-color: #eee;
+    color: #666;
+}
+
+/* 入力フィールド */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+/* フォーカス時のアクセント */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(178, 139, 64, 0.1);
+}
+
+/* 2カラムレイアウト（PC用） */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ラジオボタン */
+.radio-group label {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: normal;
+}
+.radio-group input {
+    margin-right: 6px;
+}
+
+/* プライバシーポリシーチェック */
+.privacy-check {
+    text-align: center;
+    margin: 40px 0;
+}
+.privacy-check a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* 送信ボタン */
+.btn-submit {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: var(--color-accent); /* 金茶色 */
+    color: #fff;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-submit:hover {
+    background-color: #9c7a38; /* 少し暗く */
+    transform: translateY(-2px);
+}
+
+
+
+/* --- レスポンシブ対応 (既存のCSSにも追記が必要) --- */
+@media (max-width: 768px) {
+    .access-grid {
+        grid-template-columns: 1fr; /* 縦積みにする */
+        gap: 40px;
+    }
+    
+    .modal-content {
+        padding: 24px; /* スマホでは余白を減らす */
+    }
+    .contact-form {
+        padding: 0; /* スマホでは余白をなくす */
+    }
+    .form-row {
+        grid-template-columns: 1fr; /* 縦積みに */
+        gap: 0;
+    }
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   テナント募集セクション (For Business) - 修正版
+   ========================================= */
+
+/* セクション背景 */
+.tenant-section {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* カード全体のレイアウト */
+.tenant-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    /* 影を削除し、実線の枠を追加 */
+    border: 1px solid #eee; 
+    margin-top: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 左側：画像エリア */
+.tenant-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tenant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 350px;
+    /* ホバーエフェクトを削除するため transition も削除 */
+}
+
+/* ホバー時の画像ズームエフェクトを削除 */
+
+/* 右側：コンテンツエリア */
+.tenant-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* テナント名見出し */
+.tenant-name {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* 説明文 */
+.tenant-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* スペック表（グレーの箱） */
+.tenant-specs-box {
+    background-color: #f4f4f4;
+    padding: 25px;
+    margin-bottom: 35px;
+    border-radius: 4px;
+    /* スペック表自体にも薄い枠線を追加して統一感を出す */
+    border: 1px solid #eee;
+}
+
+.tenant-specs-box dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px 30px;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.tenant-specs-box dt {
+    font-weight: bold;
+    color: var(--color-text);
+    min-width: 80px;
+}
+
+.tenant-specs-box dd {
+    margin: 0;
+    color: #666;
+}
+
+/* 専用ボタン（シックなダークグレー） */
+.tenant-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.tenant-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    /* ボタンのホバー時の影は残します（クリック感のため） */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    color: #fff;
+}
+
+/* --- レスポンシブ対応 (スマホ用) --- */
+@media (max-width: 768px) {
+    .tenant-card {
+        flex-direction: column;
+    }
+    
+    .tenant-image-wrapper {
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .tenant-content {
+        padding: 30px 24px;
+    }
+
+    .tenant-name {
+        font-size: 1.3rem;
+    }
+
+    .tenant-btn {
+        display: block;
+        width: 100%;
+    }
+}

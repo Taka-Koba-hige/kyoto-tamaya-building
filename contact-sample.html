@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | TAMAYA BUILDING</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-logo"><a href="index-students.html">TAMAYA BUILDING</a></h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index-students.html#concept">Concept</a></li>
+                <li><a href="index-students.html#rooms">Room Types</a></li>
+                <li><a href="index-students.html#facility">Facility</a></li>
+                <li><a href="index-students.html#access">Access</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="header-cta">Inquiry</a>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title fade-in">CONTACT</h1>
+                <p class="page-subtitle fade-in">お問い合わせ・見学予約</p>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="index_student.html">HOME</a></li>
+                    <li>お問い合わせ</li>
+                </ol>
+            </div>
+        </div>
+
+        <section class="section contact-section">
+            <div class="container form-container fade-in">
+                <p class="form-lead">
+                    空室状況のご確認、物件の内覧予約、その他ご質問など、お気軽にお問い合わせください。<br>
+                </p>
+
+                <form action="#" method="POST" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="type">お問い合わせ種別 <span class="badge-required">必須</span></label>
+                        <div class="select-wrapper">
+                            <select name="type" id="type" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="空室確認">空室状況の確認</option>
+                                <option value="内覧予約">内覧・見学の予約</option>
+                                <option value="資料請求">資料請求</option>
+                                <option value="その他">その他ご質問</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_attribute">お客様のご属性 <span class="badge-required">必須</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="user_attribute" value="学生ご本人" checked> 学生ご本人</label>
+                            <label><input type="radio" name="user_attribute" value="保護者様"> 保護者様</label>
+                            <label><input type="radio" name="user_attribute" value="その他"> その他</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">お名前 <span class="badge-required">必須</span></label>
+                            <input type="text" name="name" id="name" placeholder="例：京都 太郎" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="furigana">フリガナ <span class="badge-required">必須</span></label>
+                            <input type="text" name="furigana" id="furigana" placeholder="例：キョウト タロウ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">メールアドレス <span class="badge-required">必須</span></label>
+                            <input type="email" name="email" id="email" placeholder="例：info@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">電話番号 <span class="badge-any">任意</span></label>
+                            <input type="tel" name="phone" id="phone" placeholder="例：090-1234-5678">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="badge-required">必須</span></label>
+                        <textarea name="message" id="message" rows="6" placeholder="内覧ご希望の方は、希望日時を第3希望までご記入ください。その他ご不明点があればご記入ください。" required></textarea>
+                    </div>
+
+                    <div class="privacy-check">
+                        <label>
+                            <input type="checkbox" name="privacy" required>
+                            <a href="#" target="_blank">プライバシーポリシー</a>に同意する
+                        </label>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">送信する</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">TAMAYA BUILDING</div>
+            <p class="footer-address">〒604-XXXX 京都市中京区XXXX町 2-2</p>
+            <p class="footer-copyright">&copy; 2025 Tamaya Building. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

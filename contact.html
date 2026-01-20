@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | MIYAKO STUDENT RESIDENCE (京都 学生マンション)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-logo">MIYAKO RESIDENCE</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index_student.html#concept">Concept</a></li>
+                <li><a href="index_student.html#rooms">Room Types</a></li>
+                <li><a href="index_student.html#facility">Facility</a></li>
+                <li><a href="index_student.html#access">Access</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-controls" style="display: flex; align-items: center;">
+            <a href="#" class="header-cta">Inquiry</a>
+            
+            <div class="language-switcher" style="margin-left: 24px;">
+                <a href="contact.html" class="is-active">JP</a>
+                <span>/</span>
+                <a href="en/contact.html">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <div class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="index_student.html">HOME</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <section class="booking-section">
+            <div class="form-container fade-in">
+
+                <header class="booking-header">
+                    <h1>Inquiry</h1>
+                    <p>お問い合わせフォーム</p>
+                    <p>
+                        空室状況の確認や、物件のご見学予約など、<br>
+                        お気軽にお問い合わせください。<br>
+                        <span style="font-size: 0.9rem; color: #888;">* は必須項目です。</span>
+                    </p>
+                </header>
+
+                <form class="booking-form" action="#" method="POST">
+
+                    <fieldset>
+                        <legend>お問い合わせ種別</legend>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="inquiry-type">ご用件 <span class="required">必須</span></label>
+                                <select id="inquiry-type" name="inquiry_type" required>
+                                    <option value="">選択してください</option>
+                                    <option value="空室確認">空室状況の確認</option>
+                                    <option value="見学希望">物件見学の希望</option>
+                                    <option value="資料請求">資料請求</option>
+                                    <option value="その他">その他のお問い合わせ</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="user-type">お客様について</label>
+                                <select id="user-type" name="user_type">
+                                    <option value="">選択してください</option>
+                                    <option value="ご本人（学生）">ご本人（学生）</option>
+                                    <option value="保護者様">保護者様</option>
+                                    <option value="仲介業者様">仲介業者様</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>お客様情報</legend>
+
+                        <div class="form-group">
+                            <label for="name">お名前 <span class="required">必須</span></label>
+                            <input type="text" id="name" name="name" placeholder="例: 京都 太郎" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="furigana">フリガナ <span class="required">必須</span></label>
+                            <input type="text" id="furigana" name="furigana" placeholder="例: キョウト タロウ" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">メールアドレス <span class="required">必須</span></label>
+                            <input type="email" id="email" name="email" placeholder="例: info@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">電話番号 <span class="required">必須</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>お問い合わせ内容</legend>
+                        <div class="form-group">
+                            <label for="message">詳細内容 <span class="required">必須</span></label>
+                            <textarea id="message" name="message" placeholder="見学をご希望の方は、希望日時を第3希望までご記入ください。&#13;&#10;その他、ご質問などがございましたら具体的にご記入ください。" required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">入力内容を送信する</button>
+                        <p class="form-note">
+                            ※ 送信内容はSSL暗号化通信により保護されます。
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">MIYAKO RESIDENCE</div>
+            <nav class="footer-nav">
+                <a href="index_student.html#concept">Concept</a>
+                <a href="index_student.html#rooms">Room Types</a>
+                <a href="index_student.html#facility">Facility</a>
+                <a href="index_student.html#access">Access</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>〒604-XXXX 京都市中京区XXXX町 2-2</p>
+            <p>Tel: 075-XXX-XXXX (運営会社: 株式会社〇〇)</p>
+            <p class="footer-copyright">&copy; 2025 Miyako Student Residence. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
