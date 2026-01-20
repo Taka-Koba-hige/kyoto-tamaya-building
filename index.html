@@ -18,7 +18,8 @@
 
     <header class="header">
         <h1 class="header-logo">TAMAYA BUILDING</h1>
-        <nav class="header-nav">
+        
+        <nav class="header-nav pc-nav">
             <ul>
                 <li><a href="#concept">Concept</a></li>
                 <li><a href="#rooms">Room Types</a></li>
@@ -28,14 +29,32 @@
             </ul>
         </nav>
         
-        <div class="header-controls" style="display: flex; align-items: center;">
+        <div class="header-controls">
             <a href="contact-sample.html" class="header-cta">Inquiry</a>
             
-            <div class="language-switcher" style="margin-left: 24px;">
+            <div class="language-switcher">
                 <a href="index_student.html" class="is-active">JP</a>
                 <span>/</span>
                 <a href="en/index-students.html">EN</a>
             </div>
+
+            <button class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#rooms">Room Types</a></li>
+                    <li><a href="#facility">Facility</a></li>
+                    <li><a href="#tenant">For Business</a></li>
+                    <li><a href="#access">Access</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -76,57 +95,40 @@
                 <p class="section-subtitle fade-in">お部屋のご案内</p>
 
                 <div class="rooms-grid">
-                    
                     <div class="room-card fade-in">
                         <img src="image/room001.jpeg" alt="Aタイプ">
                         <div class="room-card-content">
                             <h3>〇〇〇号室</h3>
-                            
-                            <div class="room-status is-available">
-                                EMPTY
-                            </div>
-                            
+                            <div class="room-status is-available">EMPTY</div>
                             <ul class="room-card-spec">
                                 <li><strong>専有面積:</strong> 25.0 m²</li>
                                 <li><strong>月額賃料:</strong> 20,000円（水道・ガス込）<br>※電気代は基本料400円</li>
                             </ul>
                             <p>日当たりの良い、家具家電付きの標準タイプ。快適なデスクと収納を完備。</p>
-                            
                             <button type="button" class="details-link" data-modal-target="modal-room-a">
                                 View Details →
                             </button>
-                            </div>
+                        </div>
                     </div>
-
                     <div class="room-card fade-in">
                         <img src="image/room002.jpeg" alt="Bタイプ">
                         <div class="room-card-content">
                             <h3>Type B (Studio)</h3>
-                            
-                            <div class="room-status is-available">
-                                EMPTY
-                            </div>
-
+                            <div class="room-status is-available">EMPTY</div>
                             <ul class="room-card-spec">
                                 <li><strong>専有面積:</strong> 22.5 m²</li>
                                 <li><strong>月額賃料:</strong> 68,000円〜</li>
                             </ul>
                             <p>機能性を追求したコンパクトなスタジオタイプ。初めての一人暮らしに最適です。</p>
-                            
                             <a href="room-b-detail.html" class="details-link">View Details →</a>
                         </div>
                     </div>
-
                     <div class="room-card fade-in">
                         <img src="image/room003.jpeg" alt="Cタイプ">
                         <div class="room-card-content">
                             <h3>Type C (1K / Corner)</h3>
-                            
-                            <div class="room-status is-full">
-                                満室
-                            </div>
-
-                             <ul class="room-card-spec">
+                            <div class="room-status is-full">満室</div>
+                            <ul class="room-card-spec">
                                 <li><strong>専有面積:</strong> 28.0 m²</li>
                                 <li><strong>月額賃料:</strong> 78,000円〜</li>
                             </ul>
@@ -134,7 +136,6 @@
                             <a href="room-c-detail.html" class="details-link">View Details →</a>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -146,21 +147,21 @@
 
                 <div class="experience-grid">
                     <div class="room-card fade-in"> 
-                        <img src="image/book-space.jpeg" alt="オートロック">
+                        <img src="image/book-space.jpeg" alt="フリースペース">
                         <div class="room-card-content">
                             <h3>Freely-usable Space</h3>
                             <p>読書、自習、交流の場として最適なスペースです。</p>
                         </div>
                     </div>
                     <div class="room-card fade-in">
-                        <img src="image/kitchen.jpeg" alt="スタディラウンジ">
+                        <img src="image/kitchen.jpeg" alt="共用キッチン">
                         <div class="room-card-content">
                             <h3>Communal Kitchen</h3>
                             <p>Wi-Fi完備のスタディラウンジ。試験勉強や友人との交流の場として利用できます。</p>
                         </div>
                     </div>
                     <div class="room-card fade-in">
-                        <img src="image/shower-room001.jpeg" alt="宅配ボックス">
+                        <img src="image/shower-room001.jpeg" alt="シャワールーム">
                         <div class="room-card-content">
                             <h3>Shared Bathroom</h3>
                             <p>不在時でも荷物を受け取れる宅配ボックスを完備。オンラインショッピングも安心です。</p>
@@ -179,7 +180,6 @@
                     <div class="tenant-image-wrapper">
                         <img src="image/main01.jpeg" alt="テナントイメージ" class="tenant-img">
                     </div>
-                    
                     <div class="tenant-content">
                         <h3 class="tenant-name">TAMAYA BUILDING 1F</h3>
                         <p class="tenant-desc">
@@ -187,7 +187,6 @@
                             通りに面した明るい区画は、カフェ、書店、デザイン事務所などに最適です。<br>
                             建物の雰囲気に調和する、感度の高い入居者様をお待ちしております。
                         </p>
-                        
                         <div class="tenant-specs-box">
                             <dl>
                                 <dt>募集階数</dt>
@@ -200,7 +199,6 @@
                                 <dd>物販・軽飲食・オフィス</dd>
                             </dl>
                         </div>
-
                         <div class="tenant-cta-wrapper">
                             <a href="contact.html" class="tenant-btn">募集詳細・お問い合わせ</a>
                         </div>
@@ -208,6 +206,7 @@
                 </div>
             </div>
         </section>
+
         <section id="access" class="section">
             <div class="container">
                 <h2 class="section-title fade-in">Access</h2>
@@ -238,12 +237,10 @@
     <div class="modal-overlay" id="modal-room-a">
         <div class="modal-content fade-in">
             <button type="button" class="modal-close">×</button>
-            
             <div class="room-info">
                 <h1>〇〇〇号室</h1>
                 <p class="room-type">スタンダード・1Kタイプ</p>
             </div>
-
             <div class="room-gallery-modal"> 
                 <img src="image/room001.jpeg" alt="Type A メイン" class="main-image-modal">
                 <div class="thumbnail-grid">
@@ -253,30 +250,18 @@
                     <img src="image/room004.jpeg" alt="バスルーム" class="thumbnail">
                 </div>
             </div>
-
             <div class="room-info">
                 <p class="description" style="margin-top: 24px;">
                     ここに物件の説明が入ります<br>
                     南向きの大きな窓から光が差し込む明るい空間。学業に集中したい方に最適です。
                 </p>
-
                 <table class="spec-table">
                     <tbody>
-                        <tr>
-                            <th>間取り</th>
-                            <td>洋７畳</td>
-                        </tr>
-                        <tr>
-                            <th>主な家具</th>
-                            <td>ベッド、デスク、チェア、本棚、収納</td>
-                        </tr>
-                        <tr>
-                            <th>室内設備</th>
-                            <td>エアコン、ミニキッチン(IH)、バス・トイレ別、独立洗面台</td>
-                        </tr>
+                        <tr><th>間取り</th><td>洋７畳</td></tr>
+                        <tr><th>主な家具</th><td>ベッド、デスク、チェア、本棚、収納</td></tr>
+                        <tr><th>室内設備</th><td>エアコン、ミニキッチン(IH)、バス・トイレ別、独立洗面台</td></tr>
                     </tbody>
                 </table>
-                
                 <a href="contact.html" class="booking-cta">このお部屋について問い合わせる</a>
                 <p class="booking-price">月額賃料: 20,000円〜 共益費: 5,000円（水道・ガス込）※電気代は基本料400円+使用した分</p>
             </div>
