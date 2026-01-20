@@ -57,7 +57,7 @@ a:hover { color: var(--color-accent); }
     font-weight: 500;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* ボタン内の文字が改行しないように */
+    white-space: nowrap;
 }
 .header-cta:hover { background-color: #9c7a38; color: #fff; }
 
@@ -65,7 +65,7 @@ a:hover { color: var(--color-accent); }
     margin-left: 20px;
     font-family: var(--font-sans);
     font-weight: 500;
-    white-space: nowrap; /* 崩れ防止 */
+    white-space: nowrap;
 }
 .language-switcher a { color: #999; padding: 4px; font-size: 0.9rem; }
 .language-switcher span { color: #ccc; margin: 0 4px; }
@@ -143,7 +143,7 @@ a:hover { color: var(--color-accent); }
 .room-card-spec li { font-size: 0.9rem; color: #555; }
 .room-card-spec li strong { font-weight: 500; color: var(--color-text); display: inline-block; width: 80px; }
 
-/* Facility (PC default: 3 columns) */
+/* Facility */
 .experience { background-color: var(--color-light-gray); }
 .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
@@ -179,7 +179,14 @@ a:hover { color: var(--color-accent); }
 .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .access-map .map-placeholder {
     width: 100%; height: 400px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;
+    position: relative; /* 地図のレスポンシブ用 */
 }
+/* iframeのレスポンシブ制御 */
+.access-map iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 .access-list h3 {
     font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 24px;
 }
@@ -241,11 +248,10 @@ a:hover { color: var(--color-accent); }
    ========================================= */
 @media (max-width: 768px) {
     
-    /* --- Header Fixes --- */
+    /* Header Fixes */
     .header { padding: 15px 20px; }
     .header-logo { font-size: 1.1rem; }
     .pc-nav { display: none; }
-    /* Inquiryボタン周りを縮小 */
     .header-cta { padding: 6px 12px; font-size: 0.75rem; }
     .language-switcher { margin-left: 10px; font-size: 0.8rem; }
     
@@ -277,78 +283,64 @@ a:hover { color: var(--color-accent); }
     .mobile-nav li { margin: 24px 0; }
     .mobile-nav a { font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-text); font-weight: 500; }
 
-    /* --- General Layout --- */
+    /* General Layout */
     .container { padding: 0 20px; }
     .section { padding: 60px 0; }
     .section-title { font-size: 1.8rem; margin-bottom: 10px; }
     .section-subtitle { font-size: 0.9rem; margin-bottom: 40px; }
     .hero-catchphrase { font-size: 2rem; line-height: 1.4; }
 
-    /* --- Concept --- */
+    /* Concept */
     .philosophy-grid { grid-template-columns: 1fr; gap: 30px; }
     .philosophy-image-wrapper { order: -1; }
     .philosophy-image { height: 250px; }
     .philosophy-text h3 { font-size: 1.4rem; margin-bottom: 16px; }
 
-    /* --- Room Types (Vertical) --- */
+    /* Rooms */
     .rooms-grid { display: flex; flex-direction: column; gap: 30px; }
     .room-card img { height: 200px; }
 
-    /* --- Facility (Horizontal Scroll / Swipe) --- */
-    /* ここがポイント！Flexboxで横並びにし、はみ出た分をスクロールさせる */
+    /* Facility (Horizontal Scroll) */
     .experience-grid {
-        display: flex;
-        grid-template-columns: none; /* Grid解除 */
-        overflow-x: auto; /* 横スクロール有効 */
-        gap: 16px;
-        padding-bottom: 20px; /* スクロールバーのための余白 */
-        scroll-snap-type: x mandatory; /* スクロールした時にピタッと止まる */
-        -webkit-overflow-scrolling: touch; /* iOSで滑らかに */
-        
-        /* 画面端までカードを見せるためのネガティブマージン */
-        margin-right: -20px;
-        padding-right: 20px;
+        display: flex; grid-template-columns: none; overflow-x: auto; gap: 16px;
+        padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+        margin-right: -20px; padding-right: 20px;
     }
-    
     .experience-grid .room-card {
-        /* 幅を固定し、縮まないようにする */
-        min-width: 280px; 
-        width: 85%; /* 画面の85%を使って、次のカードを少し見せる */
-        flex-shrink: 0; 
-        scroll-snap-align: center; /* カードが画面中央で止まる */
+        min-width: 280px; width: 85%; flex-shrink: 0; scroll-snap-align: center;
     }
-    
-    /* スクロールバーを隠す（見た目を綺麗に） */
     .experience-grid::-webkit-scrollbar { display: none; }
     .experience-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* --- Access (Fix Size & Layout) --- */
+    /* --- Access (修正ポイント) --- */
     .access-grid { grid-template-columns: 1fr; gap: 40px; }
-    .access-map .map-placeholder { height: 250px; }
     
-    /* Access文字サイズ調整 */
+    /* 地図を横幅いっぱいにし、高さを少し抑える */
+    .access-map .map-placeholder { height: 250px; width: 100%; }
+    
+    .access-list {
+        /* 文字がはみ出さないように強制的に折り返す設定 */
+        width: 100%;
+        overflow-wrap: break-word;
+    }
     .access-list h3 { font-size: 1.3rem; margin-bottom: 16px; }
-    .access-list ul { margin-bottom: 20px; }
+    .access-list ul { margin-bottom: 20px; padding: 0; }
     .access-list li {
-        font-size: 0.85rem; /* かなり小さくして枠内に収める */
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        line-height: 1.6;
+        font-size: 0.85rem; padding-bottom: 10px; margin-bottom: 10px; line-height: 1.6;
     }
     .access-list li strong {
-        font-size: 0.95rem; /* 強調部分も控えめに */
-        display: block; margin-bottom: 2px;
+        font-size: 0.95rem; display: block; margin-bottom: 2px;
     }
     .access-list p { font-size: 0.85rem; }
 
-    /* --- Tenant --- */
+    /* Tenant */
     .tenant-card { flex-direction: column; }
     .tenant-image-wrapper { min-height: 200px; height: 200px; }
     .tenant-content { padding: 30px 20px; }
     .tenant-name { font-size: 1.3rem; }
     .tenant-btn { display: block; width: 100%; }
 
-    /* --- Modal & Footer --- */
+    /* Modal & Footer */
     .modal-content { padding: 24px; width: 95%; }
     .footer-nav a { display: block; margin: 10px 0; }
 }
