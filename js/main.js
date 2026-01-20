@@ -1,16 +1,11 @@
-/* === js/main.js (この内容でファイル全体を置き換えてください) === */
+/* === js/main.js === */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. 改良版ギャラリー機能 (複数対応) ---
-    // ページ内にある .room-gallery (詳細ページ用) や 
-    // .room-gallery-modal (モーダル用) の数だけ実行
-    
+    // --- 1. ギャラリー機能 ---
     const galleries = document.querySelectorAll('.room-gallery, .room-gallery-modal');
     
     galleries.forEach(gallery => {
-        // 各ギャラリーの「メイン画像」と「サムネイル群」を見つける
-        
         // 詳細ページ(room-detail.html)用
         let mainImage = gallery.querySelector('#galleryMainImage'); 
         
@@ -21,39 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const thumbnails = gallery.querySelectorAll('.thumbnail');
 
-        // メイン画像とサムネイルが両方存在する場合のみ、機能を有効化
         if (mainImage && thumbnails.length > 0) {
-            
             thumbnails.forEach(thumbnail => {
                 thumbnail.addEventListener('click', () => {
-                    // メイン画像を切り替え
-                    // (サムネイルの src を直接使う)
                     mainImage.src = thumbnail.src;
-                    
-                    // まず、このギャラリー内の全てのサムネイルから .is-active を削除
                     thumbnails.forEach(item => item.classList.remove('is-active'));
-                    
-                    // クリックされたサムネイルに .is-active を追加
                     thumbnail.classList.add('is-active');
                 });
             });
         }
     });
 
-    // --- 2. フェードインアニメーション (全ページ共通) ---
-    // (これはオリジナルのコードと同一です)
+    // --- 2. フェードインアニメーション ---
     const targets = document.querySelectorAll('.fade-in');
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // 一度表示したら監視を解除
+                observer.unobserve(entry.target);
             }
         });
     }, {
         rootMargin: '0px',
-        threshold: 0.1 // 10%見えたら発火
+        threshold: 0.1
     });
 
     targets.forEach(target => {
@@ -61,33 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     
-    // --- 3. 【NEW】モーダル開閉機能 ---
-    
-    // 開くボタン (data-modal-target 属性を持つすべて)
+    // --- 3. モーダル開閉機能 ---
     const modalTriggers = document.querySelectorAll('[data-modal-target]');
-    
-    // 閉じるボタン ( .modal-close 属性を持つすべて)
     const modalCloses = document.querySelectorAll('.modal-close');
-    
-    // 背景 ( .modal-overlay 属性を持つすべて)
     const modalOverlays = document.querySelectorAll('.modal-overlay');
 
-    // 開くロジック
     modalTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
-            const modalId = trigger.dataset.modalTarget; // "modal-room-a" などを取得
+            const modalId = trigger.dataset.modalTarget;
             const modal = document.getElementById(modalId);
-            
             if (modal) {
                 modal.classList.add('is-visible');
             }
         });
     });
 
-    // 閉じるロジック (閉じるボタン)
     modalCloses.forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
-            // ボタンの親にある .modal-overlay を見つけて閉じる
             const modal = closeBtn.closest('.modal-overlay');
             if (modal) {
                 modal.classList.remove('is-visible');
@@ -95,15 +71,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // 閉じるロジック (背景クリック)
     modalOverlays.forEach(overlay => {
         overlay.addEventListener('click', (event) => {
-            // クリックされたのが背景そのもの(overlay)か、
-            // 中身(content)かを確認し、背景なら閉じる
             if (event.target === overlay) {
                 overlay.classList.remove('is-visible');
             }
         });
     });
-    
+
+
+    // --- 4. 【重要】ハンバーガーメニュー開閉 (スマホ用) ---
+    // これがないとメニューが開きません！
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+    if (hamburgerBtn && mobileMenu) {
+        // ボタンを押したら開閉
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('is-active');
+            mobileMenu.classList.toggle('is-active');
+        });
+
+        // メニュー内のリンクを押したら閉じる
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('is-active');
+                mobileMenu.classList.remove('is-active');
+            });
+        });
+    }
 });
