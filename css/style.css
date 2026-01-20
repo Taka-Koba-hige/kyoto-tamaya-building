@@ -11,6 +11,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     font-family: var(--font-sans);
     color: var(--color-text);
@@ -18,10 +19,14 @@ body {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
+
 img { max-width: 100%; height: auto; display: block; }
+
 a { color: var(--color-text); text-decoration: none; transition: color 0.3s ease; }
 a:hover { color: var(--color-accent); }
+
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
 
 /* =========================================
    Header
@@ -74,8 +79,9 @@ a:hover { color: var(--color-accent); }
 }
 .hamburger-btn, .mobile-menu-overlay { display: none; }
 
+
 /* =========================================
-   Main Content
+   Main Content Sections
    ========================================= */
 .main-content { padding-top: 100px; }
 .section { padding: 100px 0; }
@@ -130,6 +136,8 @@ a:hover { color: var(--color-accent); }
     font-family: var(--font-sans); font-weight: 500; color: var(--color-accent);
     text-transform: uppercase; font-size: 0.8rem; background: none; border: none; cursor: pointer; padding: 0;
 }
+
+/* Room Status Badges */
 .room-status {
     display: inline-block; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500;
     padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase;
@@ -137,17 +145,19 @@ a:hover { color: var(--color-accent); }
 .room-status.is-available { background-color: var(--color-accent); color: #fff; }
 .room-status.is-few { background-color: #fff; color: var(--color-accent); border: 1px solid var(--color-accent); }
 .room-status.is-full { background-color: #eee; color: #888; border: 1px solid #ddd; }
+
+/* Room Spec List */
 .room-card-spec {
     list-style: none; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #eee;
 }
 .room-card-spec li { font-size: 0.9rem; color: #555; }
 .room-card-spec li strong { font-weight: 500; color: var(--color-text); display: inline-block; width: 80px; }
 
-/* Facility */
+/* Facility (PC) */
 .experience { background-color: var(--color-light-gray); }
 .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
-/* Tenant */
+/* Tenant (For Business) */
 .tenant-section { background-color: #fff; border-top: 1px solid #eee; }
 .tenant-card {
     display: flex; flex-wrap: wrap; background: #fff; border: 1px solid #eee;
@@ -175,17 +185,13 @@ a:hover { color: var(--color-accent); }
 }
 .tenant-btn:hover { background-color: #555; color: #fff; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-/* Access (PC Default) */
+/* Access (PC) */
 .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .access-map .map-placeholder {
     width: 100%; height: 400px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;
-    position: relative; /* 地図のレスポンシブ用 */
+    position: relative;
 }
-/* iframeのレスポンシブ制御 */
-.access-map iframe {
-    width: 100% !important;
-    height: 100% !important;
-}
+.access-map iframe { width: 100% !important; height: 100% !important; }
 
 .access-list h3 {
     font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 24px;
@@ -197,7 +203,10 @@ a:hover { color: var(--color-accent); }
 }
 .access-list li strong { font-size: 1.1rem; font-weight: 500; color: var(--color-text); }
 
-/* Modal */
+
+/* =========================================
+   Modal Window
+   ========================================= */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); z-index: 1000;
@@ -215,10 +224,12 @@ a:hover { color: var(--color-accent); }
     position: absolute; top: 15px; right: 15px; font-size: 2.5rem; background: none; border: none; cursor: pointer; color: #999;
 }
 .modal-close:hover { color: var(--color-text); }
-.room-gallery-modal .main-image-modal { width: 100%; height: auto; margin-bottom: 16px; }
+.room-gallery-modal .main-image-modal { width: 100%; height: auto; margin-bottom: 16px; border: 1px solid #eee; }
 .room-gallery-modal .thumbnail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .room-gallery-modal .thumbnail { width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; }
 .room-gallery-modal .thumbnail.is-active { border-color: var(--color-accent); }
+
+/* Spec Table in Modal */
 .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
 .spec-table th, .spec-table td {
     padding: 16px 0; border-bottom: 1px solid #eee; text-align: left; font-size: 0.9rem;
@@ -231,16 +242,96 @@ a:hover { color: var(--color-accent); }
 .booking-cta:hover { background-color: #9c7a38; color: #fff; }
 .booking-price { text-align: right; font-size: 0.9rem; color: #666; margin-top: 12px; }
 
-/* Animation */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+/* =========================================
+   Contact Form Styles
+   ========================================= */
+.page-header {
+    padding: 120px 0 60px;
+    text-align: center;
+    background-color: var(--color-light-gray);
+}
+.page-title {
+    font-family: var(--font-sans); font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px;
+}
+.page-subtitle {
+    font-family: var(--font-serif); color: #666; font-size: 1rem;
+}
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: var(--color-light-gray);
+    border-bottom: 1px solid #eee;
+}
+.breadcrumbs ol {
+    display: flex; list-style: none; font-size: 0.8rem;
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+}
+.breadcrumbs li::after { content: '>'; margin: 0 10px; color: #999; }
+.breadcrumbs li:last-child::after { content: ''; }
+.breadcrumbs a { color: #777; }
+.breadcrumbs a:hover { color: var(--color-accent); }
+.breadcrumbs li:last-child { font-weight: 500; color: var(--color-text); }
 
-/* Footer */
+
+.form-container { max-width: 800px; margin: 0 auto; }
+.form-lead { text-align: center; margin-bottom: 40px; line-height: 1.8; }
+.contact-form { background: #fff; padding: 40px; }
+
+.form-group { margin-bottom: 30px; }
+.form-group label {
+    display: block; font-family: var(--font-sans); font-weight: 500; margin-bottom: 10px; font-size: 0.95rem;
+}
+
+/* Badges */
+.badge-required, .badge-any {
+    font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle;
+}
+.badge-required { background-color: var(--color-accent); color: #fff; }
+.badge-any { background-color: #eee; color: #666; }
+
+/* Inputs */
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px;
+    font-family: inherit; font-size: 1rem; transition: all 0.3s ease; background-color: #fafafa;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--color-accent); background-color: #fff; box-shadow: 0 0 0 3px rgba(178, 139, 64, 0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Radio Buttons */
+.radio-group label { display: inline-block; margin-right: 20px; cursor: pointer; font-weight: normal; }
+.radio-group input { margin-right: 6px; }
+
+/* Privacy Check */
+.privacy-check { text-align: center; margin: 40px 0; }
+.privacy-check a { color: var(--color-accent); text-decoration: underline; }
+
+/* Submit Button */
+.btn-submit {
+    display: block; width: 100%; max-width: 300px; margin: 0 auto; padding: 16px;
+    background-color: var(--color-accent); color: #fff; border: none;
+    font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 1px;
+    cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-submit:hover { background-color: #9c7a38; transform: translateY(-2px); }
+
+
+/* =========================================
+   Footer
+   ========================================= */
 .footer { background-color: var(--color-text); color: #aaa; padding: 80px 0 40px; text-align: center; }
 .footer-logo { font-size: 1.8rem; letter-spacing: 2px; color: #fff; margin-bottom: 24px; }
 .footer-nav a { color: #ccc; margin: 0 15px; font-size: 0.9rem; }
 .footer-nav a:hover { color: #fff; }
 .footer-copyright { font-size: 0.8rem; margin-top: 40px; }
+
+
+/* =========================================
+   Animations
+   ========================================= */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.is-visible { opacity: 1; transform: translateY(0); }
 
 
 /* =========================================
@@ -281,7 +372,15 @@ a:hover { color: var(--color-accent); }
     .mobile-menu-overlay.is-active { opacity: 1; visibility: visible; }
     .mobile-nav ul { list-style: none; text-align: center; }
     .mobile-nav li { margin: 24px 0; }
-    .mobile-nav a { font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-text); font-weight: 500; }
+    /* ★ フォント修正箇所: ロゴ・見出しに合わせたデザインへ統一 ★ */
+    .mobile-nav a { 
+        font-family: var(--font-sans); /* セリフ体からサンセリフ体へ */
+        font-size: 1.5rem; 
+        color: var(--color-text); 
+        font-weight: 400; /* ロゴに合わせて少し細く */
+        text-transform: uppercase; /* 大文字に統一 */
+        letter-spacing: 2px; /* 文字間を広げる */
+    }
 
     /* General Layout */
     .container { padding: 0 20px; }
@@ -312,42 +411,17 @@ a:hover { color: var(--color-accent); }
     .experience-grid::-webkit-scrollbar { display: none; }
     .experience-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* --- Access (修正版: コンパクト表示) --- */
+    /* Access (Compact Mobile) */
     .access-grid { grid-template-columns: 1fr; gap: 30px; }
-    
-    /* 地図設定 */
     .access-map .map-placeholder { height: 250px; width: 100%; }
-    
-    /* テキスト設定 */
-    .access-list {
-        width: 100%;
-        overflow-wrap: break-word;
-    }
-    .access-list h3 { 
-        font-size: 1.3rem; 
-        margin-bottom: 12px; /* 見出し下の余白を削減 */
-    }
-    .access-list ul { 
-        margin-bottom: 16px; /* リスト下の余白を削減 */
-        padding: 0; 
-    }
+    .access-list { width: 100%; overflow-wrap: break-word; }
+    .access-list h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .access-list ul { margin-bottom: 16px; padding: 0; }
     .access-list li {
-        font-size: 0.85rem; 
-        padding-bottom: 8px; /* アイテム間の余白を削減 */
-        margin-bottom: 8px; 
-        line-height: 1.5;    /* 行間を1.6→1.5に詰める */
-        border-bottom: 1px dotted #ccc;
+        font-size: 0.85rem; padding-bottom: 8px; margin-bottom: 8px; line-height: 1.5; border-bottom: 1px dotted #ccc;
     }
-    .access-list li strong {
-        font-size: 0.95rem; 
-        display: block; 
-        margin-bottom: 2px;
-        line-height: 1.3; /* 大学名などが2行になっても間延びしないように */
-    }
-    .access-list p { 
-        font-size: 0.85rem; 
-        line-height: 1.6;
-    }
+    .access-list li strong { font-size: 0.95rem; display: block; margin-bottom: 2px; line-height: 1.3; }
+    .access-list p { font-size: 0.85rem; line-height: 1.6; }
 
     /* Tenant */
     .tenant-card { flex-direction: column; }
@@ -356,7 +430,22 @@ a:hover { color: var(--color-accent); }
     .tenant-name { font-size: 1.3rem; }
     .tenant-btn { display: block; width: 100%; }
 
-    /* Modal & Footer */
+    /* Contact Form (Mobile) */
+    .contact-form { padding: 20px 0; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .page-title { font-size: 2rem; }
+
+    /* Footer (Minimal Mobile) */
+    .footer { padding: 50px 0 30px; }
+    .footer-logo { font-size: 1.4rem; margin-bottom: 30px; }
+    .footer-nav {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 12px 10px;
+        max-width: 280px; margin: 0 auto 40px;
+    }
+    .footer-nav a { display: block; margin: 0; font-size: 0.85rem; text-align: center; }
+    .footer p { font-size: 0.75rem; line-height: 1.6; margin-bottom: 4px; opacity: 0.8; }
+    .footer-copyright { font-size: 0.7rem; margin-top: 30px; opacity: 0.5; }
+    
+    /* Modal */
     .modal-content { padding: 24px; width: 95%; }
-    .footer-nav a { display: block; margin: 10px 0; }
 }
