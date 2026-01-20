@@ -411,16 +411,34 @@ input:focus, select:focus, textarea:focus {
     .experience-grid::-webkit-scrollbar { display: none; }
     .experience-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* Access (Compact Mobile) */
+    /* Access (Compact Mobile) - 修正版 */
     .access-grid { grid-template-columns: 1fr; gap: 30px; }
     .access-map .map-placeholder { height: 250px; width: 100%; }
     .access-list { width: 100%; overflow-wrap: break-word; }
+    
     .access-list h3 { font-size: 1.3rem; margin-bottom: 12px; }
     .access-list ul { margin-bottom: 16px; padding: 0; }
+    
     .access-list li {
-        font-size: 0.85rem; padding-bottom: 8px; margin-bottom: 8px; line-height: 1.5; border-bottom: 1px dotted #ccc;
+        font-size: 0.85rem; 
+        padding-bottom: 10px; 
+        margin-bottom: 10px; 
+        line-height: 1.5; 
+        border-bottom: 1px dotted #ccc;
     }
-    .access-list li strong { font-size: 0.95rem; display: block; margin-bottom: 2px; line-height: 1.3; }
+    
+    /* スマホでは大学名をブロック要素にするため、元の<br>タグを隠して二重改行を防ぐ */
+    .access-list li br {
+        display: none;
+    }
+    
+    .access-list li strong { 
+        font-size: 0.95rem; 
+        display: block;      /* 改行させる */
+        margin-bottom: 0;    /* 下の余白をゼロにして、次の行（バス情報）とくっつける */
+        line-height: 1.3; 
+    }
+    
     .access-list p { font-size: 0.85rem; line-height: 1.6; }
 
     /* Tenant */
