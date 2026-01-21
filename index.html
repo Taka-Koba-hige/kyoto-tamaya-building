@@ -15,13 +15,13 @@
     <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
     <meta name="theme-color" content="#95b660">
     
-    <link rel="alternate" hreflang="ja" href="https://example.com/index.html">
-    <link rel="alternate" hreflang="en" href="https://example.com/en/index.html">
+    <link rel="alternate" hreflang="ja" href="https://taka-koba-hige.github.io/kyoto-tamaya-building/index.html">
+    <link rel="alternate" hreflang="en" href="https://taka-koba-hige.github.io/kyoto-tamaya-building/en/index.html">
 </head>
 <body>
 
     <header class="header">
-        <h1 class="header-logo">TAMAYA BUILDING</h1>
+        <h1 class="header-logo"><a href="index.html">TAMAYA BUILDING</a></h1>
         
         <nav class="header-nav pc-nav">
             <ul>
@@ -125,7 +125,9 @@
                                 <li><strong>月額賃料:</strong> 20,000円（水道・ガス込）<br>※電気代は基本料400円</li>
                             </ul>
                             <p>機能性を追求したコンパクトなスタジオタイプ。初めての一人暮らしに最適です。</p>
-                            <a href="room-b-detail.html" class="details-link">View Details →</a>
+                            <button type="button" class="details-link" data-modal-target="modal-room-b">
+                                View Details →
+                            </button>
                         </div>
                     </div>
                     <div class="room-card fade-in">
@@ -138,7 +140,9 @@
                                 <li><strong>月額賃料:</strong> 20,000円（水道・ガス込）<br>※電気代は基本料400円</li>
                             </ul>
                             <p>静かな角部屋。二面採光の明るい空間で、ゆったりと過ごしたい方へ。</p>
-                            <a href="room-c-detail.html" class="details-link">View Details →</a>
+                            <button type="button" class="details-link" data-modal-target="modal-room-c">
+                                View Details →
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -244,7 +248,7 @@
             <button type="button" class="modal-close">×</button>
             <div class="room-info">
                 <h1>〇〇〇号室</h1>
-                <p class="room-type">スタンダード・1Kタイプ</p>
+                <p class="room-type">スタンダード・1Kタイプ (Type A)</p>
             </div>
             <div class="room-gallery-modal"> 
                 <img src="image/room001.jpeg" alt="Type A メイン" class="main-image-modal">
@@ -257,8 +261,8 @@
             </div>
             <div class="room-info">
                 <p class="description" style="margin-top: 24px;">
-                    ここに物件の説明が入ります<br>
-                    南向きの大きな窓から光が差し込む明るい空間。学業に集中したい方に最適です。
+                    南向きの大きな窓から光が差し込む明るい空間。<br>
+                    学業に集中したい方に最適な標準タイプのお部屋です。
                 </p>
                 <table class="spec-table">
                     <tbody>
@@ -272,6 +276,74 @@
             </div>
         </div> 
     </div> 
+
+    <div class="modal-overlay" id="modal-room-b">
+        <div class="modal-content fade-in">
+            <button type="button" class="modal-close">×</button>
+            <div class="room-info">
+                <h1>〇〇〇号室</h1>
+                <p class="room-type">スタジオタイプ (Type B)</p>
+            </div>
+            <div class="room-gallery-modal"> 
+                <img src="image/room002.jpeg" alt="Type B メイン" class="main-image-modal">
+                <div class="thumbnail-grid">
+                    <img src="image/room002.jpeg" alt="画像1" class="thumbnail is-active">
+                    <img src="image/room002.jpeg" alt="画像2" class="thumbnail">
+                    <img src="image/room002.jpeg" alt="画像3" class="thumbnail">
+                    <img src="image/room002.jpeg" alt="画像4" class="thumbnail">
+                </div>
+            </div>
+            <div class="room-info">
+                <p class="description" style="margin-top: 24px;">
+                    機能性を追求したコンパクトなスタジオタイプ。<br>
+                    必要なものがすべて手の届く範囲にある、合理的で快適な空間です。
+                </p>
+                <table class="spec-table">
+                    <tbody>
+                        <tr><th>間取り</th><td>スタジオタイプ</td></tr>
+                        <tr><th>主な家具</th><td>ベッド、デスク、チェア、本棚</td></tr>
+                        <tr><th>室内設備</th><td>エアコン、ミニキッチン(IH)、ユニットバス</td></tr>
+                    </tbody>
+                </table>
+                <a href="contact.html" class="booking-cta">このお部屋について問い合わせる</a>
+                <p class="booking-price">月額賃料: 20,000円〜 共益費: 5,000円（水道・ガス込）※電気代は基本料400円+使用した分</p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="modal-overlay" id="modal-room-c">
+        <div class="modal-content fade-in">
+            <button type="button" class="modal-close">×</button>
+            <div class="room-info">
+                <h1>〇〇〇号室</h1>
+                <p class="room-type">角部屋・1Kタイプ (Type C)</p>
+            </div>
+            <div class="room-gallery-modal"> 
+                <img src="image/room003.jpeg" alt="Type C メイン" class="main-image-modal">
+                <div class="thumbnail-grid">
+                    <img src="image/room003.jpeg" alt="画像1" class="thumbnail is-active">
+                    <img src="image/room003.jpeg" alt="画像2" class="thumbnail">
+                    <img src="image/room003.jpeg" alt="画像3" class="thumbnail">
+                    <img src="image/room003.jpeg" alt="画像4" class="thumbnail">
+                </div>
+            </div>
+            <div class="room-info">
+                <p class="description" style="margin-top: 24px;">
+                    二面採光の明るい角部屋タイプ。<br>
+                    静かで落ち着いた環境で、勉強や趣味に没頭したい方におすすめです。
+                </p>
+                <table class="spec-table">
+                    <tbody>
+                        <tr><th>間取り</th><td>洋室 (角部屋)</td></tr>
+                        <tr><th>主な家具</th><td>ベッド、デスク、チェア、本棚、収納</td></tr>
+                        <tr><th>室内設備</th><td>エアコン、ミニキッチン(IH)、バス・トイレ別</td></tr>
+                    </tbody>
+                </table>
+                <a href="contact.html" class="booking-cta">このお部屋について問い合わせる</a>
+                <p class="booking-price">月額賃料: 20,000円〜 共益費: 5,000円（水道・ガス込）※電気代は基本料400円+使用した分</p>
+            </div>
+        </div> 
+    </div>
 
     <footer class="footer">
         <div class="container">
