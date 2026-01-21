@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleries = document.querySelectorAll('.room-gallery, .room-gallery-modal');
     
     galleries.forEach(gallery => {
-        // 詳細ページ(room-detail.html)用
         let mainImage = gallery.querySelector('#galleryMainImage'); 
-        
-        // モーダル用 (HTML構造が違うため)
         if (!mainImage) {
             mainImage = gallery.querySelector('.main-image-modal');
         }
@@ -80,20 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 4. 【重要】ハンバーガーメニュー開閉 (スマホ用) ---
-    // これがないとメニューが開きません！
+    // --- 4. ハンバーガーメニュー開閉 ---
     const hamburgerBtn = document.querySelector('.hamburger-btn');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-nav a');
 
     if (hamburgerBtn && mobileMenu) {
-        // ボタンを押したら開閉
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('is-active');
             mobileMenu.classList.toggle('is-active');
         });
 
-        // メニュー内のリンクを押したら閉じる
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburgerBtn.classList.remove('is-active');
@@ -101,4 +95,63 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    // --- 5. 【追加】フォーム送信のカスタマイズ (AJAX送信) ---
+    // これにより、無料プランでもサンクスページへ遷移できます
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            // 通常の送信をキャンセル
+            event.preventDefault();
+            
+            // 送信ボタンを無効化（二重送信防止）
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if(submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = '送信中...';
+            }
+
+            // フォームデータを取得
+            const formData = new FormData(contactForm);
+            
+            // Formspreeに裏側で送信 (AJAX)
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // 成功したらサンクスページへ手動で移動
+                    // ※ contact.html に書いた <input name="_next"> は無視してこちらで移動させます
+                    window.location.href = 'thanks.html'; 
+                } else {
+                    // エラーの場合
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('送信に失敗しました。もう一度お試しください。');
+                        }
+                    });
+                    if(submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = '送信する';
+                    }
+                }
+            })
+            .catch(error => {
+                alert('エラーが発生しました。ネットワーク環境をご確認ください。');
+                if(submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '送信する';
+                }
+            });
+        });
+    }
+
 });
