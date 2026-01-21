@@ -142,7 +142,7 @@
                     <div class="privacy-check">
                         <label>
                             <input type="checkbox" name="privacy" required>
-                            I agree to the <a href="#" target="_blank">Privacy Policy</a>
+                            I agree to the <a href="javascript:void(0);" data-modal-target="modal-privacy" style="color:var(--color-accent); text-decoration:underline;">Privacy Policy</a>
                         </label>
                     </div>
 
@@ -153,6 +153,35 @@
                 </form>
             </div>
         </section>
+
+        <div class="modal-overlay" id="modal-privacy">
+            <div class="modal-content fade-in">
+                <button type="button" class="modal-close">×</button>
+                <div class="room-info">
+                    <h2 style="font-family: var(--font-sans); font-size: 1.5rem; margin-bottom: 20px;">Privacy Policy</h2>
+                    <div style="font-size: 0.9rem; line-height: 1.8; text-align: left;">
+                        <p style="margin-bottom: 1em;">TAMAYA BUILDING (hereinafter referred to as "we") has established the following personal information protection policy.</p>
+                        
+                        <h3 style="font-size: 1.1rem; margin: 20px 0 10px; font-weight: 500;">1. Management of Personal Information</h3>
+                        <p style="margin-bottom: 1em;">We will keep customers' personal information accurate and up-to-date and take necessary measures such as maintaining security systems to prevent unauthorized access, loss, damage, falsification, or leakage.</p>
+                        
+                        <h3 style="font-size: 1.1rem; margin: 20px 0 10px; font-weight: 500;">2. Purpose of Use</h3>
+                        <p style="margin-bottom: 1em;">Personal information entrusted to us by customers will be used to send e-mails and materials as a response to questions, business guidance, and contact from us.</p>
+                        
+                        <h3 style="font-size: 1.1rem; margin: 20px 0 10px; font-weight: 500;">3. Prohibition of Disclosure to Third Parties</h3>
+                        <p style="margin-bottom: 1em;">We will appropriately manage personal information entrusted to us by customers and will not disclose personal information to third parties except in the following cases:<br>
+                        - When there is customer consent<br>
+                        - When disclosure is necessary based on laws and regulations</p>
+                        
+                        <h3 style="font-size: 1.1rem; margin: 20px 0 10px; font-weight: 500;">4. Contact Us</h3>
+                        <p style="margin-bottom: 1em;">For inquiries regarding our handling of personal information, please contact below.<br>
+                        TAMAYA BUILDING Management Office<br>
+                        Mail: info@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
