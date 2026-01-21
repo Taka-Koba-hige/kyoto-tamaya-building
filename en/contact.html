@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | TAMAYA BUILDING</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="icon" href="../image/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../image/apple-touch-icon.png">
+    <meta name="theme-color" content="#95b660">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-logo"><a href="index.html">TAMAYA BUILDING</a></h1>
+        
+        <nav class="header-nav pc-nav">
+            <ul>
+                <li><a href="index.html#concept">Concept</a></li>
+                <li><a href="index.html#rooms">Room Types</a></li>
+                <li><a href="index.html#facility">Facility</a></li>
+                <li><a href="index.html#tenant">For Business</a></li>
+                <li><a href="index.html#access">Access</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-controls">
+            <a href="#" class="header-cta">Inquiry</a>
+            
+            <div class="language-switcher">
+                <a href="../contact.html">JP</a>
+                <span>/</span>
+                <a href="contact.html" class="is-active">EN</a>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html#concept">Concept</a></li>
+                    <li><a href="index.html#rooms">Room Types</a></li>
+                    <li><a href="index.html#facility">Facility</a></li>
+                    <li><a href="index.html#tenant">For Business</a></li>
+                    <li><a href="index.html#access">Access</a></li>
+                    <li><a href="contact.html" style="margin-top:20px; color:var(--color-accent);">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title fade-in">Contact</h1>
+                <p class="page-subtitle fade-in">Inquiry / Viewing Reservation</p>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="index.html">HOME</a></li>
+                    <li>Contact</li>
+                </ol>
+            </div>
+        </div>
+
+        <section class="section contact-section">
+            <div class="container form-container fade-in">
+                <p class="form-lead">
+                    Please feel free to contact us for availability checks, viewing reservations, or any other questions.<br>
+                    We will get back to you within 2 business days.
+                </p>
+
+                <form action="https://formspree.io/f/mgoonaqo" method="POST" class="contact-form">
+
+                    <input type="hidden" name="_next" value="https://taka-koba-hige.github.io/kyoto-tamaya-building/en/thanks.html">
+                    
+                    <div class="form-group">
+                        <label for="type">Inquiry Type <span class="badge-required">Required</span></label>
+                        <div class="select-wrapper">
+                            <select name="type" id="type" required>
+                                <option value="" disabled selected>Please select</option>
+                                <option value="Check Availability">Check Availability</option>
+                                <option value="Viewing Reservation">Viewing Reservation</option>
+                                <option value="Request Information">Request Information</option>
+                                <option value="Tenant Inquiry">Business/Tenant Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>You are... <span class="badge-required">Required</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="user_attribute" value="Student" checked> Student</label>
+                            <label><input type="radio" name="user_attribute" value="Parent/Guardian"> Parent/Guardian</label>
+                            <label><input type="radio" name="user_attribute" value="Business Entity"> Business</label>
+                            <label><input type="radio" name="user_attribute" value="Other"> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">First Name <span class="badge-required">Required</span></label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Ex: Taro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name <span class="badge-required">Required</span></label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Ex: Kyoto" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span class="badge-required">Required</span></label>
+                            <input type="email" name="email" id="email" placeholder="Ex: info@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="badge-any">Optional</span></label>
+                            <input type="tel" name="phone" id="phone" placeholder="Ex: +81-90-1234-5678">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="badge-required">Required</span></label>
+                        <textarea name="message" id="message" rows="6" placeholder="If you wish to view the property, please provide 3 preferred dates and times." required></textarea>
+                    </div>
+
+                    <div class="privacy-check">
+                        <label>
+                            <input type="checkbox" name="privacy" required>
+                            I agree to the <a href="#" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">TAMAYA BUILDING</div>
+            <nav class="footer-nav">
+                <a href="index.html#concept">Concept</a>
+                <a href="index.html#rooms">Room Types</a>
+                <a href="index.html#facility">Facility</a>
+                <a href="index.html#tenant">For Business</a>
+                <a href="index.html#access">Access</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>30-19 Kamigamo Asatsuyugahara-cho, Kita-ku, Kyoto 603-8035</p>
+            <p>Tel: +81-75-XXX-XXXX (Managed by: 〇〇 Corp.)</p>
+            <p class="footer-copyright">&copy; 2025 TAMAYA BUILDING. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
