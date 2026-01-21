@@ -15,8 +15,8 @@
     <link rel="apple-touch-icon" href="../image/apple-touch-icon.png">
     <meta name="theme-color" content="#95b660">
     
-    <link rel="alternate" hreflang="ja" href="https://example.com/index.html">
-    <link rel="alternate" hreflang="en" href="https://example.com/en/index.html">
+    <link rel="alternate" hreflang="ja" href="https://taka-koba-hige.github.io/kyoto-tamaya-building/index.html">
+    <link rel="alternate" hreflang="en" href="https://taka-koba-hige.github.io/kyoto-tamaya-building/en/index.html">
 </head>
 <body>
 
@@ -121,11 +121,13 @@
                             <h3>Room 〇〇〇</h3>
                             <div class="room-status is-available">EMPTY</div>
                             <ul class="room-card-spec">
-                                <li><strong>Size:</strong> 25.0 m²</li>
+                                <li><strong>Size:</strong> 22.5 m²</li>
                                 <li><strong>Rent:</strong> 20,000 JPY<br>(Inc. Water & Gas)<br><span style="font-size:0.8em;">*Electricity: Base 400 JPY + Usage</span></li>
                             </ul>
                             <p>Compact studio type pursuing functionality. Ideal for living alone for the first time.</p>
-                            <a href="room-b-detail.html" class="details-link">View Details →</a>
+                            <button type="button" class="details-link" data-modal-target="modal-room-b">
+                                View Details →
+                            </button>
                         </div>
                     </div>
                     <div class="room-card fade-in">
@@ -134,11 +136,13 @@
                             <h3>Room 〇〇〇</h3>
                             <div class="room-status is-full">FULL</div>
                             <ul class="room-card-spec">
-                                <li><strong>Size:</strong> 25.0 m²</li>
+                                <li><strong>Size:</strong> 28.0 m²</li>
                                 <li><strong>Rent:</strong> 20,000 JPY<br>(Inc. Water & Gas)<br><span style="font-size:0.8em;">*Electricity: Base 400 JPY + Usage</span></li>
                             </ul>
                             <p>Quiet corner room. A bright space with light from two sides, for those who want to relax.</p>
-                            <a href="room-c-detail.html" class="details-link">View Details →</a>
+                            <button type="button" class="details-link" data-modal-target="modal-room-c">
+                                View Details →
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -244,7 +248,7 @@
             <button type="button" class="modal-close">×</button>
             <div class="room-info">
                 <h1>Room 〇〇〇</h1>
-                <p class="room-type">Standard 1K Type</p>
+                <p class="room-type">Standard 1K Type (Type A)</p>
             </div>
             <div class="room-gallery-modal"> 
                 <img src="../image/room001.jpeg" alt="Type A Main" class="main-image-modal">
@@ -272,6 +276,74 @@
             </div>
         </div> 
     </div> 
+
+    <div class="modal-overlay" id="modal-room-b">
+        <div class="modal-content fade-in">
+            <button type="button" class="modal-close">×</button>
+            <div class="room-info">
+                <h1>Room 〇〇〇</h1>
+                <p class="room-type">Studio Type (Type B)</p>
+            </div>
+            <div class="room-gallery-modal"> 
+                <img src="../image/room002.jpeg" alt="Type B Main" class="main-image-modal">
+                <div class="thumbnail-grid">
+                    <img src="../image/room002.jpeg" alt="Image 1" class="thumbnail is-active">
+                    <img src="../image/room002.jpeg" alt="Image 2" class="thumbnail">
+                    <img src="../image/room002.jpeg" alt="Image 3" class="thumbnail">
+                    <img src="../image/room002.jpeg" alt="Image 4" class="thumbnail">
+                </div>
+            </div>
+            <div class="room-info">
+                <p class="description" style="margin-top: 24px;">
+                    Compact studio type pursuing functionality.<br>
+                    A rational and comfortable space where everything you need is within reach.
+                </p>
+                <table class="spec-table">
+                    <tbody>
+                        <tr><th>Layout</th><td>Studio</td></tr>
+                        <tr><th>Furnishings</th><td>Bed, Desk, Chair, Bookshelf</td></tr>
+                        <tr><th>Facilities</th><td>AC, Mini Kitchen (IH), Unit Bath</td></tr>
+                    </tbody>
+                </table>
+                <a href="contact.html" class="booking-cta">Inquire about this room</a>
+                <p class="booking-price">Rent: 20,000 JPY〜 Common Service Fee: 5,000 JPY (Inc. Water/Gas) *Electricity separate</p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="modal-overlay" id="modal-room-c">
+        <div class="modal-content fade-in">
+            <button type="button" class="modal-close">×</button>
+            <div class="room-info">
+                <h1>Room 〇〇〇</h1>
+                <p class="room-type">Corner Room / 1K (Type C)</p>
+            </div>
+            <div class="room-gallery-modal"> 
+                <img src="../image/room003.jpeg" alt="Type C Main" class="main-image-modal">
+                <div class="thumbnail-grid">
+                    <img src="../image/room003.jpeg" alt="Image 1" class="thumbnail is-active">
+                    <img src="../image/room003.jpeg" alt="Image 2" class="thumbnail">
+                    <img src="../image/room003.jpeg" alt="Image 3" class="thumbnail">
+                    <img src="../image/room003.jpeg" alt="Image 4" class="thumbnail">
+                </div>
+            </div>
+            <div class="room-info">
+                <p class="description" style="margin-top: 24px;">
+                    Bright corner room with light from two sides.<br>
+                    Recommended for those who want to immerse themselves in study or hobbies in a quiet environment.
+                </p>
+                <table class="spec-table">
+                    <tbody>
+                        <tr><th>Layout</th><td>Western-style (Corner)</td></tr>
+                        <tr><th>Furnishings</th><td>Bed, Desk, Chair, Bookshelf, Storage</td></tr>
+                        <tr><th>Facilities</th><td>AC, Mini Kitchen (IH), Separate Bath/Toilet</td></tr>
+                    </tbody>
+                </table>
+                <a href="contact.html" class="booking-cta">Inquire about this room</a>
+                <p class="booking-price">Rent: 20,000 JPY〜 Common Service Fee: 5,000 JPY (Inc. Water/Gas) *Electricity separate</p>
+            </div>
+        </div> 
+    </div>
 
     <footer class="footer">
         <div class="container">
